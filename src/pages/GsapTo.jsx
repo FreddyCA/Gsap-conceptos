@@ -1,5 +1,20 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapTo = () => {
   // TODO: Implement the gsap.to() method
+
+  useGSAP(() => {
+    gsap.to("#cuadro-animation", {
+      x: 250,
+      y: 50,
+      repeat: -1,
+      yoyo: true,
+      rotation: 360,
+      duration: 2,
+      ease:"elastic"
+    });
+  }, []);
 
   return (
     <main>
@@ -30,7 +45,10 @@ const GsapTo = () => {
       </p>
 
       <div className="mt-20">
-        <div id="blue-box" className="w-20 h-20 bg-blue-500 rounded-lg" />
+        <div
+          id="cuadro-animation"
+          className="w-20 h-20 bg-blue-500 rounded-lg"
+        />
       </div>
     </main>
   );
